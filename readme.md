@@ -12,7 +12,7 @@ You have now defeated English class.
 
 ## Install
 
-	npm install [git-repo]
+	npm install git://github.com/garbados/summarizely.git
 
 ## How It Works
 
