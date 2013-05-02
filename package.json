@@ -2,7 +2,7 @@
     "name": "summarizely",
     "description": "Text summarization tool",
     "main":"./lib",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "author": "Max Thayer <garbados@gmail.com>",
     "license": "MIT",
     "keywords": ["linguistics", "language", "text analysis", "summarization"],

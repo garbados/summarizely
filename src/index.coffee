@@ -30,7 +30,7 @@ get_words = (text, unique=true) ->
     return words
 
 # split text body into sentences
-get_sentences = (text) -> text.split /\.[ \n]/g
+get_sentences = (text) -> (s.trim() for s in text.split /(\.)['”" \)\n]/g)
 
 # split text body into paragraphs
 get_paragraphs = (text) -> text.split /[\r\n]{2}/g
@@ -53,26 +53,26 @@ get_sentence_ranks = (paragraph) ->
   matrix = ((0 for x in [0..sentences.length]) for x in [0..sentences.length])
   for i in [0...sentences.length]
     for j in [0...sentences.length]
-      if i == j then continue
-      matrix[i][j] = get_likeness sentences[i], sentences[j]
+      if i == j
+        matrix[i][j] = 0
+      else
+        matrix[i][j] = get_likeness sentences[i], sentences[j]
   # Build the sentences dictionary
   # The score of a sentence is the sum of all its intersections
   sentences_dict = {}
   for i in [0...sentences.length]
     score = 0
     for j in [0...sentences.length]
-      if i is j then continue
-      else
-        score += matrix[i][j]
+      score += matrix[i][j]
     sentences_dict[sentences[i]] = score
   # return dict indicating intersection scores for every sentence
   return sentences_dict
   
 get_best_sentence = (sentences_dict) ->
     best_sentence = ''
-    max_value = 0
+    max_value = -1
     for k, v of sentences_dict
-      if v >= max_value
+      if v > max_value
         max_value = v
         best_sentence = k
     return best_sentence

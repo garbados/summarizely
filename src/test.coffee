@@ -6,4 +6,4 @@ sparknotes = (summarize content).join('\n')
 ratio = ((1 - (sparknotes.length / content.length))*100).toFixed(2)
 
 console.log sparknotes
-console.log "\n\nText reduced #{ratio}%, from #{content.length} to #{sparknotes.length} characters"
+console.log "\nText reduced #{ratio}%, from #{content.length} to #{sparknotes.length} characters"
