@@ -1,0 +1,23 @@
+{
+    "name": "summarizely",
+    "description": "Text summarization tool",
+    "main":"./lib",
+    "version": "0.0.1",
+    "author": "Max Thayer <garbados@gmail.com>",
+    "license": "MIT",
+    "keywords": ["linguistics", "language", "text analysis", "summarization"],
+    "homepage": "https://github.com/garbados/summarizely",
+    "repository" : {
+        "type": "git", 
+        "url": "git@github.com:garbados/summarizely.git"
+    },
+    "engines": {
+        "node": ">= 0.8.17"
+    },
+    "dependencies": {
+        "natural": "0.1.x"
+    },
+    "scripts":{
+        "test": "node ./lib/test"
+    }
+}
